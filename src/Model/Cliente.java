@@ -45,6 +45,6 @@ public class Cliente {
 		this.telefone = telefone;
 	}
 	
-	
+	public void top(){}
 
 }
