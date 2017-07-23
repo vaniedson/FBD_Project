@@ -21,6 +21,7 @@ public class Tela_Teste extends JFrame{
 		JLabel prolnome, prolvalidade, prolpreco, prolquant_estoque, proldescricao;
 		JTextField profnome, profvalidade, profpreco, profquant_estoque, profdescricao;
 		JButton probcadastrar, probsair, problimpar;
+		
 		prolnome = new JLabel("NOME:");
 		profnome = new JTextField(25);
 		prolvalidade = new JLabel("VALIDADE:");
@@ -51,6 +52,7 @@ public class Tela_Teste extends JFrame{
 		panel1.add(probcadastrar);
 		panel1.add(probsair);
 		panel1.add(problimpar);
+		
 		panel1.add( label1 ); // adiciona o rótulo ao painel;
 		tabbedPane.addTab( "PRODUTO", null, panel1, "First Panel" ); 
 
@@ -61,6 +63,7 @@ public class Tela_Teste extends JFrame{
 		JLabel clilnome, cliltipo, cliltelefone;
 		JTextField clifnome, cliftelefone;
 		JButton clibcadastrar, clibsair, cliblimpar;
+		
 		JComboBox clicombo = new JComboBox(new Object[]{"              PESSOA FÍSICA           ", "          PESSOA JURÍDICA        "});
 		clilnome = new JLabel("               NOME:               ");
 		clifnome = new JTextField(25);
@@ -83,6 +86,7 @@ public class Tela_Teste extends JFrame{
 		panel2.add(clibcadastrar);
 		panel2.add(clibsair);
 		panel2.add(cliblimpar);
+		
 		panel2.add( label2 ); // adiciona o rótulo ao painel
 		tabbedPane.addTab( "CLIENTE", null, panel2, "Second Panel" );
 		
@@ -90,26 +94,70 @@ public class Tela_Teste extends JFrame{
 		
 		
 		// TELA SESSÃO
-		JLabel selnome;
-		JTextField sefnome;
+		JLabel selnome, seldescricao;
+		JTextField sefnome, sefdescricao;
+		JButton sebcadastrar, sebsair, seblimpar;
+		
 		selnome = new JLabel("NOME:");
 		sefnome = new JTextField(25);
+		seldescricao = new JLabel("DESCRIÇÃO:");
+		sefdescricao = new JTextField(25);
+		sebcadastrar = new JButton("ENTRAR");
+		sebsair = new JButton("SAIR");
+		seblimpar = new JButton("LIMPAR");
+		
 		JLabel label3 = new JLabel( "", SwingConstants.CENTER );
 		JPanel panel3 = new JPanel(); // cria o terceiro painel
+		
 		panel3.add(selnome);
 		panel3.add(sefnome);
+		panel3.add(seldescricao);
+		panel3.add(sefdescricao);
+		panel3.add(sebcadastrar);
+		panel3.add(sebsair);
+		panel3.add(seblimpar);
+		
 		tabbedPane.addTab( "SESSÃO", null, panel3, "Third Panel" );
+		
+		
 
 		//TELA FUNCIONÁRIO
-		JLabel fulnome;
-		JTextField fufnome;
-		fulnome = new JLabel("NOME:");
+		JLabel fulnome, fulsexo, fulmatricula, fullogin, fulsenha;
+		JTextField fufnome, fufmatricula, fuflogin, fufsenha;
+		JButton fubcadastrar, fubsair, fublimpar;
+		
+		JComboBox fucombo = new JComboBox(new Object[]{"               MASCULINO               ", "               FEMININO               "});
+		
+		fulsexo = new JLabel("               SEXO:               ");
+		fulnome = new JLabel("               NOME:               ");
 		fufnome = new JTextField(25);
-		JLabel label4 = new JLabel( "panel two", SwingConstants.CENTER );
+		fulmatricula = new JLabel("MATRÍCULA:");
+		fufmatricula = new JTextField(25);
+		fullogin = new JLabel("LOGIN:");
+		fuflogin = new JTextField(25);
+		fulsenha = new JLabel("SENHA:");
+		fufsenha = new JTextField(25);
+		fubcadastrar = new JButton("ENTRAR");
+		fubsair = new JButton("SAIR");
+		fublimpar = new JButton("LIMPAR");
+		
+		JLabel label4 = new JLabel( "", SwingConstants.CENTER );
 		JPanel panel4 = new JPanel(); // cria o segundo panel
-		panel4.setBackground( Color.YELLOW ); // configura o fundo como amarelo
+		
+		panel4.add(fulsexo);
+		panel4.add(fucombo);
 		panel4.add(fulnome);
 		panel4.add(fufnome);
+		panel4.add(fulmatricula);
+		panel4.add(fufmatricula);
+		panel4.add(fullogin);
+		panel4.add(fuflogin);
+		panel4.add(fulsenha);
+		panel4.add(fufsenha);
+		panel4.add(fubcadastrar);
+		panel4.add(fubsair);
+		panel4.add(fublimpar);
+		
 		panel4.add( label4 ); // adiciona o rótulo ao painel
 		tabbedPane.addTab( "FUNCIONÁRIO", null, panel4, "Second Panel" );
 
