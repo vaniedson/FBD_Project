@@ -15,18 +15,17 @@ public class Tela_Menu extends JFrame {
 
 	Dimension screenSize= Toolkit.getDefaultToolkit().getScreenSize();
 
-	//public static Sons sons=new Sons();
-
 	private int larguraTela;
 	private int alturaTela;
-//	private Fundo fundo;
-	private JLabel jogar;
-	private JLabel Ajuda;
-	private JLabel creditos;
+	private Fundo fundo;
+	private JLabel pesquisar;
+	private JLabel venda;
+	private JLabel cadastrar;
 	private JLabel sair;
+	private JLabel texto;
 	
 
-	public void Tela_Produto(){
+	public Tela_Menu(){
 
 		larguraTela=(int)(screenSize.width*0.66);
 		alturaTela=(int)(screenSize.height*0.66);
@@ -35,38 +34,43 @@ public class Tela_Menu extends JFrame {
 
 		if(larguraTela>=896 && alturaTela>=503){
 
-//			fundo= new Fundo(new ImageIcon("Imagens/Telas/Fundo.png").getImage());
-//			fundo.addMouseMotionListener(new MouseAdapt());
-//			fundo.setBounds(-1, -20, larguraTela, alturaTela);
-//			getLayeredPane().add(fundo, new Integer(1));
+			fundo= new Fundo(new ImageIcon("img/back.png").getImage());
+			fundo.addMouseMotionListener(new MouseAdapt());
+			fundo.setBounds(-1, -20, larguraTela, alturaTela);
+			getLayeredPane().add(fundo, new Integer(1));
 
 		}
 
-		jogar=new JLabel(new ImageIcon("Imagens/Botões/jogar.png"));
-		jogar.addMouseMotionListener(new MouseAdapt());
-		jogar.addMouseListener(new MouseAdapt());
-		jogar.setBounds(larguraTela-585, 105, 100, 50);
-		getLayeredPane().add(jogar, new Integer(2));
-
-		Ajuda=new JLabel(new ImageIcon("Imagens/Botões/ajuda.png"));
-		Ajuda.addMouseMotionListener(new MouseAdapt());
-		Ajuda.addMouseListener(new MouseAdapt());
-		Ajuda.setBounds(larguraTela-400, 105, 100, 50);
-		getLayeredPane().add(Ajuda, new Integer(2));
-
-		creditos=new JLabel(new ImageIcon("Imagens/Botões/creditos.png"));
-		creditos.addMouseMotionListener(new MouseAdapt());
-		creditos.addMouseListener(new MouseAdapt());
-		creditos.setBounds(larguraTela-520, 205, 150, 50);
-		getLayeredPane().add(creditos, new Integer(2));
+		texto = new JLabel(new ImageIcon("img/texto.png"));
+		texto.setBounds(larguraTela-570, -340, 600, 800);
+		getLayeredPane().add(texto, new Integer(2));
 		
-		sair=new JLabel(new ImageIcon("Imagens/Botões/sair.png"));
+		
+		pesquisar=new JLabel(new ImageIcon("img/pes1.png"));
+		pesquisar.addMouseMotionListener(new MouseAdapt());
+		pesquisar.addMouseListener(new MouseAdapt());
+		pesquisar.setBounds(larguraTela-740, 160, 130, 130);
+		getLayeredPane().add(pesquisar, new Integer(2));
+
+		venda=new JLabel(new ImageIcon("img/ven1.png"));
+		venda.addMouseMotionListener(new MouseAdapt());
+		venda.addMouseListener(new MouseAdapt());
+		venda.setBounds(larguraTela-880, 20, 130, 130);
+		getLayeredPane().add(venda, new Integer(2));
+
+		cadastrar=new JLabel(new ImageIcon("Img/cad1.png"));
+		cadastrar.addMouseMotionListener(new MouseAdapt());
+		cadastrar.addMouseListener(new MouseAdapt());
+		cadastrar.setBounds(larguraTela-880, 320, 130, 130);
+		getLayeredPane().add(cadastrar, new Integer(2));
+		
+		sair=new JLabel(new ImageIcon("img/sair1.png"));
 		sair.addMouseMotionListener(new MouseAdapt());
 		sair.addMouseListener(new MouseAdapt());
-		sair.setBounds(larguraTela-890, 15, 80, 80);
+		sair.setBounds(larguraTela-100, 390, 80, 80);
 		getLayeredPane().add(sair, new Integer(2));
 
-		setTitle("TELA DE OPÇÕES");
+		setTitle("TELA DE MENU");
 		setSize(larguraTela,alturaTela);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -79,29 +83,29 @@ public class Tela_Menu extends JFrame {
 
 		
 		public void mouseMoved(MouseEvent e){
-			if(e.getSource()==jogar){
+			if(e.getSource()==pesquisar){
 
-				jogar.setIcon(new ImageIcon("Imagens/Botões/jogar1.png"));
+				pesquisar.setIcon(new ImageIcon("img/pes1.png"));
 			}else{
-				jogar.setIcon(new ImageIcon("Imagens/Botões/jogar.png"));
+				pesquisar.setIcon(new ImageIcon("img/pes2.png"));
 			}
 
-			if(e.getSource()==Ajuda){
-				Ajuda.setIcon(new ImageIcon("Imagens/Botões/ajuda1.png"));
+			if(e.getSource()==venda){
+				venda.setIcon(new ImageIcon("img/ven1.png"));
 			}else{
-				Ajuda.setIcon(new ImageIcon("Imagens/Botões/ajuda.png"));
+				venda.setIcon(new ImageIcon("img/ven2.png"));
 			}
 
-			if(e.getSource()==creditos){
-				creditos.setIcon(new ImageIcon("Imagens/Botões/creditos1.png"));
+			if(e.getSource()==cadastrar){
+				cadastrar.setIcon(new ImageIcon("img/cad1.png"));
 			}else{
-				creditos.setIcon(new ImageIcon("Imagens/Botões/creditos.png"));
+				cadastrar.setIcon(new ImageIcon("img/cad2.png"));
 			}
 
 			if(e.getSource()==sair){
-				sair.setIcon(new ImageIcon("Imagens/Botões/sair2.png"));
+				sair.setIcon(new ImageIcon("img/sair1.png"));
 			}else{
-				sair.setIcon(new ImageIcon("Imagens/Botões/sair.png"));
+				sair.setIcon(new ImageIcon("img/sair2.png"));
 			}
 		}
 
@@ -109,29 +113,24 @@ public class Tela_Menu extends JFrame {
 		public void mouseClicked(MouseEvent e){
 
 			if(e.getButton()==MouseEvent.BUTTON1){
-				if(e.getSource()==jogar){
+				if(e.getSource()==pesquisar){
 					dispose();
-//					TelaInicio.sons.getMouseClicked().play();
-//					new TelaTematica();				
+    				new Tela_Menu();				
 				}
 
-				if(e.getSource()==Ajuda){
+				if(e.getSource()==venda){
 					dispose();
-//					TelaInicio.sons.getMouseClicked().play();
-//					new TelaAjuda();
-
-				}
-
-				if(e.getSource()==creditos){
-					dispose();
-//					TelaInicio.sons.getMouseClicked().play();
-//					new TelaCreditos();
+					new Tela_Menu();
 
 				}
 
-				if(e.getSource()==sair){
-//					TelaInicio.sons.getMouseClicked().play();
-					
+				if(e.getSource()==cadastrar){
+					dispose();
+					new Tela_APP();
+
+				}
+
+				if(e.getSource()==sair){		
 					System.exit(0);
 				}
 			}
@@ -139,7 +138,7 @@ public class Tela_Menu extends JFrame {
 	}
 
 	public static void main(String[] args) {
-//		new TelaInicio();
+		new Tela_Menu();
 		
 	}
 

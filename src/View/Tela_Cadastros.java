@@ -11,6 +11,11 @@ import javax.swing.SwingConstants;
 
 public class Tela_Cadastros extends JFrame{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	// configurando GUI
 	public Tela_Cadastros(){
 		super( "Tela de Cadastros" );
@@ -163,7 +168,7 @@ public class Tela_Cadastros extends JFrame{
 		
 		panel4.add( label4 ); // adiciona o rótulo ao painel
 		tabbedPane.addTab( "FUNCIONÁRIO", null, panel4, "Second Panel" );
-
+		
 		add( tabbedPane ); // adicion a JTabbedPane ao frame
 	} // fim do construtor JTabbedPaneFrame
 } // fim da classe JTabbedPaneFrame 
