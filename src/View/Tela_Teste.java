@@ -1,7 +1,5 @@
 package View;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
@@ -12,9 +10,10 @@ import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
 
 public class Tela_Teste extends JFrame{
+	
 	// configurando GUI
 	public Tela_Teste(){
-		super( "JTabbedPane Demo" );
+		super( "Tela de Cadastros" );
 		JTabbedPane tabbedPane = new JTabbedPane(); // cria JTabbedPane
 
 		// TELA PRODUTOS 
@@ -32,7 +31,7 @@ public class Tela_Teste extends JFrame{
 		profquant_estoque = new JTextField(25);
 		proldescricao= new JLabel("DESCRIÇÃO:");
 		profdescricao = new JTextField(25);
-		probcadastrar = new JButton("ENTRAR");
+		probcadastrar = new JButton("CADASTRAR");
 		probsair = new JButton("SAIR");
 		problimpar = new JButton("LIMPAR");
 
@@ -70,7 +69,7 @@ public class Tela_Teste extends JFrame{
 		cliltipo = new JLabel("                    TIPO:                    ");
 		cliltelefone = new JLabel("TELEFONE:");
 		cliftelefone = new JTextField(25);
-		clibcadastrar = new JButton("ENTRAR");
+		clibcadastrar = new JButton("CADASTRAR");
 		clibsair = new JButton("SAIR");
 		cliblimpar = new JButton("LIMPAR");
 		
@@ -102,7 +101,7 @@ public class Tela_Teste extends JFrame{
 		sefnome = new JTextField(25);
 		seldescricao = new JLabel("DESCRIÇÃO:");
 		sefdescricao = new JTextField(25);
-		sebcadastrar = new JButton("ENTRAR");
+		sebcadastrar = new JButton("CADASTRAR");
 		sebsair = new JButton("SAIR");
 		seblimpar = new JButton("LIMPAR");
 		
@@ -122,8 +121,8 @@ public class Tela_Teste extends JFrame{
 		
 
 		//TELA FUNCIONÁRIO
-		JLabel fulnome, fulsexo, fulmatricula, fullogin, fulsenha;
-		JTextField fufnome, fufmatricula, fuflogin, fufsenha;
+		JLabel fulnome, fulsexo, fulmatricula, fullogin, fulsenha, fulresenha;
+		JTextField fufnome, fufmatricula, fuflogin, fufsenha, fufresenha;
 		JButton fubcadastrar, fubsair, fublimpar;
 		
 		JComboBox fucombo = new JComboBox(new Object[]{"               MASCULINO               ", "               FEMININO               "});
@@ -137,7 +136,9 @@ public class Tela_Teste extends JFrame{
 		fuflogin = new JTextField(25);
 		fulsenha = new JLabel("SENHA:");
 		fufsenha = new JTextField(25);
-		fubcadastrar = new JButton("ENTRAR");
+		fulresenha = new JLabel("CONFIRMAR A SENHA:");
+		fufresenha = new JTextField(25);
+		fubcadastrar = new JButton("CADASTRAR");
 		fubsair = new JButton("SAIR");
 		fublimpar = new JButton("LIMPAR");
 		
@@ -154,6 +155,8 @@ public class Tela_Teste extends JFrame{
 		panel4.add(fuflogin);
 		panel4.add(fulsenha);
 		panel4.add(fufsenha);
+		panel4.add(fulresenha);
+		panel4.add(fufresenha);
 		panel4.add(fubcadastrar);
 		panel4.add(fubsair);
 		panel4.add(fublimpar);
