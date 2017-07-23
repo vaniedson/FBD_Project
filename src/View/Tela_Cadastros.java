@@ -9,10 +9,10 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
 
-public class Tela_Teste extends JFrame{
+public class Tela_Cadastros extends JFrame{
 	
 	// configurando GUI
-	public Tela_Teste(){
+	public Tela_Cadastros(){
 		super( "Tela de Cadastros" );
 		JTabbedPane tabbedPane = new JTabbedPane(); // cria JTabbedPane
 
