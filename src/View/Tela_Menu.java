@@ -126,7 +126,11 @@ public class Tela_Menu extends JFrame {
 
 				if(e.getSource()==cadastrar){
 					dispose();
-					new Tela_APP();
+					Tela_Cadastros tabbedPaneFrame = new Tela_Cadastros();
+					tabbedPaneFrame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+					tabbedPaneFrame.setSize( 340, 450 );
+					tabbedPaneFrame.setVisible( true ); 
+					tabbedPaneFrame.setLocationRelativeTo(null);
 
 				}
 

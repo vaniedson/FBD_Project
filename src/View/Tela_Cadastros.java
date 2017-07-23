@@ -16,10 +16,10 @@ public class Tela_Cadastros extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	// configurando GUI
+	
 	public Tela_Cadastros(){
 		super( "Tela de Cadastros" );
-		JTabbedPane tabbedPane = new JTabbedPane(); // cria JTabbedPane
+		JTabbedPane tabbedPane = new JTabbedPane(); 
 
 		// TELA PRODUTOS 
 		JLabel prolnome, prolvalidade, prolpreco, prolquant_estoque, proldescricao;
@@ -41,7 +41,7 @@ public class Tela_Cadastros extends JFrame{
 		problimpar = new JButton("LIMPAR");
 
 		JLabel label1 = new JLabel( "", SwingConstants.CENTER );
-		JPanel panel1 = new JPanel(); // cria o primeiro painel
+		JPanel panel1 = new JPanel(); 
 
 		panel1.add(prolnome);
 		panel1.add(profnome);
@@ -57,7 +57,7 @@ public class Tela_Cadastros extends JFrame{
 		panel1.add(probsair);
 		panel1.add(problimpar);
 		
-		panel1.add( label1 ); // adiciona o rótulo ao painel;
+		panel1.add( label1 );
 		tabbedPane.addTab( "PRODUTO", null, panel1, "First Panel" ); 
 
 
@@ -79,7 +79,7 @@ public class Tela_Cadastros extends JFrame{
 		cliblimpar = new JButton("LIMPAR");
 		
 		JLabel label2 = new JLabel( "", SwingConstants.CENTER );
-		JPanel panel2 = new JPanel(); // cria o segundo panel
+		JPanel panel2 = new JPanel(); 
 		
 		panel2.add(cliltipo);
 		panel2.add(clicombo);
@@ -91,7 +91,7 @@ public class Tela_Cadastros extends JFrame{
 		panel2.add(clibsair);
 		panel2.add(cliblimpar);
 		
-		panel2.add( label2 ); // adiciona o rótulo ao painel
+		panel2.add( label2 ); 
 		tabbedPane.addTab( "CLIENTE", null, panel2, "Second Panel" );
 		
 
@@ -111,7 +111,7 @@ public class Tela_Cadastros extends JFrame{
 		seblimpar = new JButton("LIMPAR");
 		
 		JLabel label3 = new JLabel( "", SwingConstants.CENTER );
-		JPanel panel3 = new JPanel(); // cria o terceiro painel
+		JPanel panel3 = new JPanel(); 
 		
 		panel3.add(selnome);
 		panel3.add(sefnome);
@@ -148,7 +148,7 @@ public class Tela_Cadastros extends JFrame{
 		fublimpar = new JButton("LIMPAR");
 		
 		JLabel label4 = new JLabel( "", SwingConstants.CENTER );
-		JPanel panel4 = new JPanel(); // cria o segundo panel
+		JPanel panel4 = new JPanel(); 
 		
 		panel4.add(fulsexo);
 		panel4.add(fucombo);
@@ -166,10 +166,10 @@ public class Tela_Cadastros extends JFrame{
 		panel4.add(fubsair);
 		panel4.add(fublimpar);
 		
-		panel4.add( label4 ); // adiciona o rótulo ao painel
+		panel4.add( label4 );
 		tabbedPane.addTab( "FUNCIONÁRIO", null, panel4, "Second Panel" );
 		
-		add( tabbedPane ); // adicion a JTabbedPane ao frame
-	} // fim do construtor JTabbedPaneFrame
-} // fim da classe JTabbedPaneFrame 
+		add( tabbedPane );
+	} 
+} 
 
