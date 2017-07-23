@@ -17,16 +17,43 @@ public class Tela_Teste extends JFrame{
 		JTabbedPane tabbedPane = new JTabbedPane(); // cria JTabbedPane
 
 		// TELA PRODUTOS 
-		JLabel prolnome;
-		JTextField profnome;
+		JLabel prolnome, prolvalidade, prolpreco, prolquant_estoque, proldescricao;
+		JTextField profnome, profvalidade, profpreco, profquant_estoque, profdescricao;
+		JButton probcadastrar, probsair, problimpar;
 		prolnome = new JLabel("NOME:");
 		profnome = new JTextField(25);
+		prolvalidade = new JLabel("VALIDADE:");
+		profvalidade = new JTextField(25);
+		prolpreco = new JLabel("PREÇO:");
+		profpreco = new JTextField(25);
+		prolquant_estoque = new JLabel("QUANTIDADE EM ESTOQUE:");
+		profquant_estoque = new JTextField(25);
+		proldescricao= new JLabel("DESCRIÇÃO:");
+		profdescricao = new JTextField(25);
+		probcadastrar = new JButton("ENTRAR");
+		probsair = new JButton("SAIR");
+		problimpar = new JButton("LIMPAR");
+
 		JLabel label1 = new JLabel( "", SwingConstants.CENTER );
 		JPanel panel1 = new JPanel(); // cria o primeiro painel
+
 		panel1.add(prolnome);
 		panel1.add(profnome);
+		panel1.add(prolvalidade);
+		panel1.add(profvalidade);
+		panel1.add(prolpreco);
+		panel1.add(profpreco);
+		panel1.add(prolquant_estoque);
+		panel1.add(profquant_estoque);
+		panel1.add(proldescricao);
+		panel1.add(profdescricao);
+		panel1.add(probcadastrar);
+		panel1.add(probsair);
+		panel1.add(problimpar);
 		panel1.add( label1 ); // adiciona o rótulo ao painel;
 		tabbedPane.addTab( "PRODUTO", null, panel1, "First Panel" ); 
+
+
 
 		// TELA CLIENTE
 		JLabel clilnome;
