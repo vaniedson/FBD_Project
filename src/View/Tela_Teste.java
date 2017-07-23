@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
 
 public class Tela_Teste extends JFrame{
@@ -54,20 +55,40 @@ public class Tela_Teste extends JFrame{
 		tabbedPane.addTab( "PRODUTO", null, panel1, "First Panel" ); 
 
 
+		
 
 		// TELA CLIENTE
-		JLabel clilnome;
-		JTextField clifnome;
-		clilnome = new JLabel("NOME:");
+		JLabel clilnome, cliltipo, cliltelefone;
+		JTextField clifnome, cliftelefone;
+		JButton clibcadastrar, clibsair, cliblimpar;
+		JComboBox clicombo = new JComboBox(new Object[]{"              PESSOA FÍSICA           ", "          PESSOA JURÍDICA        "});
+		clilnome = new JLabel("               NOME:               ");
 		clifnome = new JTextField(25);
+		cliltipo = new JLabel("                    TIPO:                    ");
+		cliltelefone = new JLabel("TELEFONE:");
+		cliftelefone = new JTextField(25);
+		clibcadastrar = new JButton("ENTRAR");
+		clibsair = new JButton("SAIR");
+		cliblimpar = new JButton("LIMPAR");
+		
 		JLabel label2 = new JLabel( "", SwingConstants.CENTER );
 		JPanel panel2 = new JPanel(); // cria o segundo panel
-		panel2.setBackground( Color.YELLOW ); // configura o fundo como amarelo
+		
+		panel2.add(cliltipo);
+		panel2.add(clicombo);
 		panel2.add(clilnome);
 		panel2.add(clifnome);
+		panel2.add(cliltelefone);
+		panel2.add(cliftelefone);
+		panel2.add(clibcadastrar);
+		panel2.add(clibsair);
+		panel2.add(cliblimpar);
 		panel2.add( label2 ); // adiciona o rótulo ao painel
 		tabbedPane.addTab( "CLIENTE", null, panel2, "Second Panel" );
+		
 
+		
+		
 		// TELA SESSÃO
 		JLabel selnome;
 		JTextField sefnome;
