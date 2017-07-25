@@ -11,6 +11,10 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
 
+import APP.APP;
+import Controle.Banco_de_Dados;
+import Model.Cliente;
+
 
 public class Tela_Cadastros extends JFrame implements ActionListener{
 	
@@ -195,7 +199,7 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// AÇÃO PRODUTO
 		if(e.getSource().equals(this.probcadastrar)) {
-			//METODO CADASTRAR
+			
 			dispose();
 		}
 		if (e.getSource().equals(this.probsair)) {
@@ -209,7 +213,8 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		
 		//AÇÃO CLIENTE
 		if(e.getSource().equals(this.clibcadastrar)) {
-			//METODO CADASTRAR;
+	//		Cliente c = new Cliente(nome, tipo, telefone);
+	//		APP.BD.cadastrarCliente(c);
 			dispose();
 		}
 		if (e.getSource().equals(this.clibsair)) {

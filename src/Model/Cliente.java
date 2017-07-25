@@ -1,24 +1,14 @@
 package Model;
 
 public class Cliente {
-	private int id;
 	private String nome;
 	private int tipo;
 	private String telefone;
 
-	public Cliente(int id, String nome, int tipo, String telefone) {
-		this.id = id;
+	public Cliente(String nome, int tipo, String telefone) {
 		this.nome=nome;
 		this.tipo=tipo;
 		this.telefone=telefone;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getNome() {

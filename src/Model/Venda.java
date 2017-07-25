@@ -1,4 +1,4 @@
-package Controle;
+package Model;
 
 public class Venda {
 
