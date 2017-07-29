@@ -11,8 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
 
-import APP.APP;
-import Controle.Banco_de_Dados;
+import App.App;
 import Model.Cliente;
 
 
@@ -30,6 +29,7 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 	JLabel clilnome, cliltipo, cliltelefone;
 	JTextField clifnome, cliftelefone;
 	JButton clibcadastrar, clibsair, cliblimpar;
+	JComboBox clicombo;
 
 	JLabel selnome, seldescricao;
 	JTextField sefnome, sefdescricao;
@@ -87,7 +87,7 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 
 		// TELA CLIENTE
 
-		JComboBox clicombo = new JComboBox(new Object[]{"              PESSOA FÍSICA           ", "          PESSOA JURÍDICA        "});
+		clicombo = new JComboBox(new Object[]{"              PESSOA FÍSICA           ", "          PESSOA JURÍDICA        "});
 		clilnome = new JLabel("               NOME:               ");
 		clifnome = new JTextField(25);
 		cliltipo = new JLabel("                    TIPO:                    ");
@@ -215,6 +215,11 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		if(e.getSource().equals(this.clibcadastrar)) {
 	//		Cliente c = new Cliente(nome, tipo, telefone);
 	//		APP.BD.cadastrarCliente(c);
+			
+			if(clicombo.getSelectedItem().equals("Pessoa Fisica")){
+				
+			}
+			
 			dispose();
 		}
 		if (e.getSource().equals(this.clibsair)) {
