@@ -73,10 +73,32 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		problimpar = new JButton("LIMPAR");
 		problimpar.addActionListener(this);
 		
+		try {
+			JFrame ventana = new JFrame("JFormattedTextField");
+			MaskFormatter mascara = new MaskFormatter("##-##-####");
+			mascara.setPlaceholderCharacter('_');
+			JFormattedTextField campo = new JFormattedTextField(mascara);
+			ventana.add(profvalidade);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
+		profnome.addKeyListener(new KeyListener() {
+			
+			public void keyTyped(KeyEvent e) {
+			
+				char c = e.getKeyChar();
+				if(Character.isDigit(c)){
+					e.consume();
+				}
+			}
+			
+			public void keyReleased(KeyEvent e) {}
+			
+			public void keyPressed(KeyEvent e) {}
+		});
 		profquant_estoque.addKeyListener(new KeyListener() {
 			
-			@Override
 			public void keyTyped(KeyEvent e) {
 				char c = e.getKeyChar();
 				if(c<'0' || c> '9'){
@@ -87,17 +109,9 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 				
 			}
 			
-			@Override
-			public void keyReleased(KeyEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void keyReleased(KeyEvent e) {}
 			
-			@Override
-			public void keyPressed(KeyEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void keyPressed(KeyEvent e) {}
 		});
 
 
