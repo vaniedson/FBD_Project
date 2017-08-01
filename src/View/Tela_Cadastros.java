@@ -4,12 +4,23 @@ import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.SwingConstants;
+import javax.swing.text.DefaultFormatterFactory;
+import javax.swing.text.MaskFormatter;
+import javax.swing.text.NumberFormatter;
 
 import App.App;
 import Model.Cliente;
@@ -22,6 +33,7 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private static final String Numero = null;
 	JLabel prolnome, prolvalidade, prolpreco, prolquant_estoque, proldescricao;
 	JTextField profnome, profvalidade, profpreco, profquant_estoque, profdescricao;
 	JButton probcadastrar, probsair, problimpar;
@@ -60,6 +72,33 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		probsair.addActionListener(this);
 		problimpar = new JButton("LIMPAR");
 		problimpar.addActionListener(this);
+		
+		
+		profquant_estoque.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char c = e.getKeyChar();
+				if(c<'0' || c> '9'){
+					
+					e.consume();
+					
+				}
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 
 
 		JLabel label1 = new JLabel( "", SwingConstants.CENTER );
@@ -81,10 +120,8 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 
 		panel1.add( label1 );
 		tabbedPane.addTab( "PRODUTO", null, panel1, "First Panel" ); 
-
-
-
-
+		
+		
 		// TELA CLIENTE
 
 		clicombo = new JComboBox(new Object[]{"              PESSOA FÍSICA           ", "          PESSOA JURÍDICA        "});
@@ -194,7 +231,7 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		add( tabbedPane );
 		
 	}
-
+	
 		
 	public void actionPerformed(ActionEvent e) {
 		// AÇÃO PRODUTO
@@ -260,5 +297,7 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		}
 	}
 
+ 
+	
 } 
 
