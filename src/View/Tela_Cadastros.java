@@ -25,6 +25,7 @@ import javax.swing.text.NumberFormatter;
 import App.App;
 import Model.Cliente;
 import Model.Produtos;
+import Model.Seccao;
 
 
 public class Tela_Cadastros extends JFrame implements ActionListener{
@@ -351,16 +352,15 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		
 		//AÇÃO SESSÃO
 		if(e.getSource().equals(this.sebcadastrar)) {
-			//METODO CADASTRAR
-			dispose();
+			
 		}
 		if (e.getSource().equals(this.sebsair)) {
 			dispose();
 			new Tela_Menu();
 		}
 		if (e.getSource().equals(this.seblimpar)) {
-			dispose();
-			// COMANDO LIMPAR JTEXTFIELD
+			sefnome.setText("");
+			sefdescricao.getText();
 		}
 		
 		//AÇÃO FUNCIONÁRIO
