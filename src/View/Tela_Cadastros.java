@@ -96,7 +96,7 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 			
 		
 		try {
-			MaskFormatter maskcpf =  new javax.swing.text.MaskFormatter("R$ ####");
+			MaskFormatter maskcpf =  new javax.swing.text.MaskFormatter("####");
 			profpreco = new JFormattedTextField(maskcpf);
 			profpreco.setColumns(24);
 			
@@ -305,9 +305,9 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 			int i = Integer.parseInt(profquant_estoque.getText());
 			float f = Float.parseFloat(profpreco.getText());
 			int s = Integer.parseInt(profpesquisa.getText());
-					
+			//Produtos w = new Produtos(nome, codBarras, dataValidade, preco, quantEstoque, descricao, idSeccao)	
 			Produtos p = new Produtos(profnome.getText(), profcodigo_barras.getText(), profvalidade.getText(), f, i, profdescricao.getText(), s );
-			System.out.println(profnome.getText()+ profcodigo_barras.getText() + profvalidade.getText()+ profpreco.getText() + profquant_estoque.getText()+ profdescricao.getText()+ 0);
+			System.out.println(profnome.getText()+ profcodigo_barras.getText() + profvalidade.getText()+ profpreco.getText() + profquant_estoque.getText()+ profdescricao.getText()+ 10);
 			// Estudar...
 			App.banco.gravarProdutos(p);
 			
