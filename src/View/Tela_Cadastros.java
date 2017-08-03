@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.text.ParseException;
 
@@ -23,6 +24,7 @@ import javax.swing.SwingConstants;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
 import javax.swing.text.NumberFormatter;
+import java.text.NumberFormat;
 
 import App.App;
 import Model.Cliente;
@@ -40,6 +42,8 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 	 */
 	private static final long serialVersionUID = 1L;
 	private static final String Numero = null;
+	private static final DecimalFormatSymbols REAL = null;
+	private static final String JLabel5 = null;
 	JLabel prolnome, prolvalidade, prolpreco, prolquant_estoque, proldescricao, prolcodigo_barras, prolsessao;
 	JTextField profnome, profvalidade, profpreco, profquant_estoque, profdescricao, profcodigo_barras, profpesquisa;
 	JButton probcadastrar, probsair, problimpar, probpesquisar;
@@ -57,8 +61,7 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 	JTextField fufnome, fufmatricula, fuflogin, fuftelefone;
 	JPasswordField fufsenha, fufresenha;
 	JButton fubcadastrar, fubsair, fublimpar;
-	
-	
+
 	
 	public Tela_Cadastros(){
 		
@@ -93,10 +96,12 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		problimpar.addActionListener(this);
 		fultelefone = new JLabel("TELEFONE");
 		fuftelefone = new JTextField(25);
-			
+	
+		
+		
 		
 		try {
-			MaskFormatter maskcpf =  new javax.swing.text.MaskFormatter("####");
+			MaskFormatter maskcpf =  new javax.swing.text.MaskFormatter("#.###,##");
 			profpreco = new JFormattedTextField(maskcpf);
 			profpreco.setColumns(24);
 			
@@ -353,6 +358,12 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 	}
 	
 		
+	private Object obj_formato(double salario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 	public void actionPerformed(ActionEvent e) {
 		// AÇÃO PRODUTO
 		if(e.getSource().equals(this.probcadastrar)) {
