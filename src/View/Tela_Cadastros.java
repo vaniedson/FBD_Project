@@ -354,9 +354,9 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		//AÇÃO SESSÃO
 		if(e.getSource().equals(this.sebcadastrar)) {
 			
-			Seccao s = new Seccao(1, sefnome.getText(), sefdescricao.getText());
+			Seccao s = new Seccao(sefnome.getText(), sefdescricao.getText());
 			App.banco.gravarSeccao(s);
-			///System.out.println(sefnome.getText()+sefdescricao.getText());
+			System.out.println(sefnome.getText()+sefdescricao.getText());
 			
 			sefnome.setText("");
 			sefdescricao.setText("");

@@ -12,6 +12,12 @@ public class Seccao {
 		this.descricao=descricao;
 		
 	}
+	
+	public Seccao( String nome, String descricao){
+		this.nome=nome;
+		this.descricao=descricao;
+		
+	}
 
 	public int getId() {
 		return id;
