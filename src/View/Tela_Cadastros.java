@@ -390,6 +390,13 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 				App.banco.gravarEmpregado(EM);
 			}
 			
+			fufnome.setText("");
+			fuftelefone.setText("");
+			fufmatricula.setText("");
+			fuflogin.setText("");
+			fufsenha.setText("");
+			fufresenha.setText("");
+			
 		}
 		if (e.getSource().equals(this.fubsair)) {
 			dispose();
@@ -398,6 +405,7 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		if (e.getSource().equals(this.fublimpar)) {
 			
 			fufnome.setText("");
+			fuftelefone.setText("");
 			fufmatricula.setText("");
 			fuflogin.setText("");
 			fufsenha.setText("");
