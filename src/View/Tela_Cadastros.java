@@ -6,6 +6,8 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -24,6 +26,7 @@ import javax.swing.text.NumberFormatter;
 
 import App.App;
 import Model.Cliente;
+import Model.Empregado;
 import Model.Produtos;
 import Model.Seccao;
 import Model.Sessao;
@@ -50,8 +53,9 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 	JTextField sefnome, sefdescricao;
 	JButton sebcadastrar, sebsair, seblimpar;
 	
-	JLabel fulnome, fulsexo, fulmatricula, fullogin, fulsenha, fulresenha;
-	JTextField fufnome, fufmatricula, fuflogin, fufsenha, fufresenha;
+	JLabel fulnome, fulsexo, fulmatricula, fullogin, fulsenha, fulresenha, fultelefone;
+	JTextField fufnome, fufmatricula, fuflogin, fuftelefone;
+	JPasswordField fufsenha, fufresenha;
 	JButton fubcadastrar, fubsair, fublimpar;
 	
 	
@@ -87,6 +91,8 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		probsair.addActionListener(this);
 		problimpar = new JButton("LIMPAR");
 		problimpar.addActionListener(this);
+		fultelefone = new JLabel("TELEFONE");
+		fuftelefone = new JTextField(25);
 			
 		
 		try {
@@ -252,9 +258,9 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		fullogin = new JLabel("LOGIN:");
 		fuflogin = new JTextField(25);
 		fulsenha = new JLabel("SENHA:");
-		fufsenha = new JTextField(25);
+		fufsenha = new JPasswordField(25);
 		fulresenha = new JLabel("CONFIRMAR A SENHA:");
-		fufresenha = new JTextField(25);
+		fufresenha = new JPasswordField(25);
 		fubcadastrar = new JButton("CADASTRAR");
 		fubcadastrar.addActionListener(this);
 		fubsair = new JButton("SAIR");
@@ -271,6 +277,8 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		panel4.add(fufnome);
 		panel4.add(fulmatricula);
 		panel4.add(fufmatricula);
+		panel4.add(fultelefone);
+		panel4.add(fuftelefone);
 		panel4.add(fullogin);
 		panel4.add(fuflogin);
 		panel4.add(fulsenha);
@@ -373,16 +381,27 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		
 		//AÇÃO FUNCIONÁRIO
 		if(e.getSource().equals(this.fubcadastrar)) {
-			//METODO CADASTRAR
-			dispose();
+			if(clicombo.getSelectedItem().equals("Masculino")){
+				Empregado EM = new Empregado(fufnome.getText(), 0 , fuftelefone.getText(), fufmatricula.getText(), fufsenha.getSelectedText());
+				App.banco.gravarEmpregado(EM);
+			}
+			if(clicombo.getSelectedItem().equals("Feminino")){
+				Empregado EM = new Empregado(fufnome.getText(), 1 , fuftelefone.getText(), fufmatricula.getText(), fufsenha.getSelectedText());
+				App.banco.gravarEmpregado(EM);
+			}
+			
 		}
 		if (e.getSource().equals(this.fubsair)) {
 			dispose();
 			new Tela_Menu();
 		}
 		if (e.getSource().equals(this.fublimpar)) {
-			dispose();
-			// COMANDO LIMPAR JTEXTFIELD
+			
+			fufnome.setText("");
+			fufmatricula.setText("");
+			fuflogin.setText("");
+			fufsenha.setText("");
+			fufresenha.setText("");
 		}
 	}
 	
