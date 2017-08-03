@@ -337,8 +337,8 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 				App.banco.gravarCliente(c);
 			}
 			
-			
-			
+			clifnome.setText("");
+			cliftelefone.setText("");
 		}
 		if (e.getSource().equals(this.clibsair)) {
 			dispose();
@@ -377,8 +377,6 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 			// COMANDO LIMPAR JTEXTFIELD
 		}
 	}
-
- 
 	
 } 
 
