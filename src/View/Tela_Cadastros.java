@@ -299,7 +299,7 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 			int s = Integer.parseInt(profpesquisa.getText());
 					
 			Produtos p = new Produtos(profnome.getText(), profcodigo_barras.getText(), profvalidade.getText(), f, i, profdescricao.getText(), s );
-			System.out.println(profnome.getText()+ profcodigo_barras.getText() + profvalidade.getText()+ f+ i+ profdescricao.getText()+ 0);
+			System.out.println(profnome.getText()+ profcodigo_barras.getText() + profvalidade.getText()+ profpreco.getText() + profquant_estoque.getText()+ profdescricao.getText()+ 0);
 			// Estudar...
 			App.banco.gravarProdutos(p);
 			

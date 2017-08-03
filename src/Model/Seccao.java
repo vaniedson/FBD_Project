@@ -4,12 +4,12 @@ public class Seccao {
 
 	private int id;
 	private String nome;
-	private String descriçao;
+	private String descricao;
 	
-	public Seccao(int id, String nome, String descriçao){
+	public Seccao(int id, String nome, String descricao){
 		this.id=id;
 		this.nome=nome;
-		this.descriçao=descriçao;
+		this.descricao=descricao;
 		
 	}
 
@@ -29,11 +29,11 @@ public class Seccao {
 		this.nome = nome;
 	}
 
-	public String getDescriçao() {
-		return descriçao;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDescriçao(String descriçao) {
-		this.descriçao = descriçao;
+	public void setDescriçao(String descricao) {
+		this.descricao = descricao;
 	}
 }
