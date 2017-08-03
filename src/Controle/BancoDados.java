@@ -61,7 +61,7 @@ public class BancoDados {
 
 	public void gravarSeccao(Seccao sec){
 		
-		String query = "insert into seccao (nome,descricao) values('"+sec.getNome()+"','"+sec.getDescriçao()+"');";
+		String query = "insert into seccao (nome,descricao) values('"+sec.getNome()+"','"+sec.getDescricao()+"');";
 		try {
 				 this.statement.executeUpdate(query);
 		} catch (SQLException e) {
