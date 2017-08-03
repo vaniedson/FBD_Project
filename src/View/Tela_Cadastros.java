@@ -115,6 +115,29 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 			e1.printStackTrace();
 		}
 		
+		profcodigo_barras.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char c = e.getKeyChar();
+				if(c<'0' || c> '9'){
+					
+					e.consume();
+					}
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 			
 		profnome.addKeyListener(new KeyListener() {
 			
@@ -255,7 +278,7 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		fufnome = new JTextField(25);
 		fulmatricula = new JLabel("MATRÍCULA:");
 		fufmatricula = new JTextField(25);
-		fullogin = new JLabel("LOGIN:");
+		fullogin = new JLabel("     LOGIN:     ");
 		fuflogin = new JTextField(25);
 		fulsenha = new JLabel("SENHA:");
 		fufsenha = new JPasswordField(25);
@@ -270,6 +293,39 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 
 		JLabel label4 = new JLabel( "", SwingConstants.CENTER );
 		JPanel panel4 = new JPanel(); 
+		
+		fufmatricula.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent ew) {
+				
+				char c = ew.getKeyChar();
+				if(c<'0' || c> '9' || c==9){
+					
+					ew.consume();
+				
+			}
+				}
+			
+			@Override
+			public void keyReleased(KeyEvent ew) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent ew) {}
+		});
+		
+		try {
+			MaskFormatter maskcpf =  new javax.swing.text.MaskFormatter("##-####-####");
+			fuftelefone = new JFormattedTextField(maskcpf);
+			fuftelefone.setColumns(25);
+			
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		panel4.add(fulsexo);
 		panel4.add(fucombo);
