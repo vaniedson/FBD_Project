@@ -26,6 +26,7 @@ import App.App;
 import Model.Cliente;
 import Model.Produtos;
 import Model.Seccao;
+import Model.Sessao;
 
 
 public class Tela_Cadastros extends JFrame implements ActionListener{
@@ -186,7 +187,7 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		JPanel panel2 = new JPanel(); 
 		
 		try {
-			MaskFormatter maskcpf =  new javax.swing.text.MaskFormatter("##-####/####");
+			MaskFormatter maskcpf =  new javax.swing.text.MaskFormatter("##-####-####");
 			cliftelefone = new JFormattedTextField(maskcpf);
 			cliftelefone.setColumns(24);
 			
@@ -353,6 +354,13 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		//AÇÃO SESSÃO
 		if(e.getSource().equals(this.sebcadastrar)) {
 			
+			Seccao s = new Seccao(1, sefnome.getText(), sefdescricao.getText());
+			App.banco.gravarSeccao(s);
+			///System.out.println(sefnome.getText()+sefdescricao.getText());
+			
+			sefnome.setText("");
+			sefdescricao.setText("");
+			
 		}
 		if (e.getSource().equals(this.sebsair)) {
 			dispose();
@@ -360,7 +368,7 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		}
 		if (e.getSource().equals(this.seblimpar)) {
 			sefnome.setText("");
-			sefdescricao.getText();
+			sefdescricao.setText("");
 		}
 		
 		//AÇÃO FUNCIONÁRIO
