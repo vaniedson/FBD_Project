@@ -1,6 +1,8 @@
 package App;
 
 import Controle.BancoDados;
+import Model.Cliente;
+import View.Tela_Menu;
 
 public class App {
 	
@@ -15,7 +17,9 @@ public class App {
 		 else{
 			 System.out.println("nao");
 		 }
-
+	//	 new Tela_Menu();
+		 
+		 App.banco.gravarCliente(new Cliente("jeff'", 0, "343434"));
 	}
 
 }

@@ -25,7 +25,7 @@ public class BancoDados {
 	public void conectar(){
 		String servidor = "jdbc:mysql://localhost:3306/fbd_grafica?useSSL=false";
 		String usuario = "root";
-		String senha ="1234";
+		String senha ="arthur@123";
 		String drive ="com.mysql.jdbc.Driver";
 		
 		try {
@@ -51,23 +51,25 @@ public class BancoDados {
 	public void gravarCliente(Cliente cliente){
 		
 		try {
-			 String query= "insert into cliente (nome,tipo,telefone) values('"+cliente.getNome()+"',"+cliente.getTipo()+",'"+cliente.getTelefone()+"');";
+			 String query= "insert into cliente (nome,tipo,telefone) values('"+cliente.getNome()+"','"+cliente.getTipo()+"','"+cliente.getTelefone()+"');";
 			 this.statement.executeUpdate(query);
 		} catch (SQLException e) {
-			System.out.println(e);
+			System.err.println(e);
 		}
 	}
 	
 
 	public void gravarSeccao(Seccao sec){
 		
-		String query = "insert into seccao (nome,descricao) values('"+sec.getNome()+"','"+sec.getDescricao()+"');";
+		
 		try {
-				 this.statement.executeUpdate(query);
+				String query = "insert into seccao (nome,descricao) values('"+sec.getNome()+"','"+sec.getDescricao()+"');";
+				this.statement.executeUpdate(query);
+				 
 		} catch (SQLException e) {
 				System.out.println(e);
 		}
-		query  = null;
+		
 		
 	}	
 	
