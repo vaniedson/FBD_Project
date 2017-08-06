@@ -39,7 +39,7 @@ public class Seccao {
 		return descricao;
 	}
 
-	public void setDescriçao(String descricao) {
+	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 }

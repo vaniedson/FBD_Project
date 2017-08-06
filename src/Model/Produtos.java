@@ -6,14 +6,14 @@ public class Produtos {
 	
 	private int id ;
 	private String nome;
-	private String codBarras;
+	private int codBarras;
 	private String dataValidade;
 	private float preco;
 	private int quantEstoque;
 	private String descricao;
 	private int idSeccao;
 	
-	public Produtos( String nome, String codBarras,String dataValidade, float preco, int quantEstoque, String descricao, int idSeccao) {
+	public Produtos( String nome, int codBarras,String dataValidade, float preco, int quantEstoque, String descricao, int idSeccao) {
 		this.nome = nome;
 		this.codBarras = codBarras;
 		this.dataValidade= dataValidade;
@@ -67,7 +67,7 @@ public class Produtos {
 		this.id = id;
 	}
 
-	public void setCodBarras(String codBarras) {
+	public void setCodBarras(int codBarras) {
 		this.codBarras = codBarras;
 	}
 
@@ -79,7 +79,7 @@ public class Produtos {
 		return id;
 	}
 
-	public String getCodBarras() {
+	public int getCodBarras() {
 		return codBarras;
 	}
 

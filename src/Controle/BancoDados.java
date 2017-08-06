@@ -51,7 +51,7 @@ public class BancoDados {
 	public void gravarCliente(Cliente cliente){
 		
 		try {
-			 String query= "insert into cliente (nome,tipo,telefone) values('"+cliente.getNome()+"','"+cliente.getTipo()+"','"+cliente.getTelefone()+"');";
+			 String query= "INSERT INTO cliente (nome,tipo,telefone) values ('"+cliente.getNome()+"','"+cliente.getTipo()+"','"+cliente.getTelefone()+"');";
 			 this.statement.executeUpdate(query);
 		} catch (SQLException e) {
 			System.err.println(e);
@@ -76,21 +76,21 @@ public class BancoDados {
 	
 	public void gravarProdutos(Produtos prod){
 		
-		String query = "insert into Produto (nome,cod_Barras,validade,preço,quant_estoque,descrição,id_seccao) "
-				+ "values('"+prod.getNome()+"','"+prod.getCodBarras()+"','"+prod.getDataValidade()+"','"+prod.getPreco()+"','"+prod.getQuantEstoque()+"','"+prod.getDescricao()+"','"+prod.getIdSeccao()+"')";
 		try {
+			String query = "insert into Produto (nome,cod_Barra,validade,preço,quant_estoque,descrição,id_seccao) values('"+prod.getNome()+"',"+prod.getCodBarras()+",'"+prod.getDataValidade()+"',"+prod.getPreco()+",'"+prod.getQuantEstoque()+"','"+prod.getDescricao()+"',"+prod.getIdSeccao()+");";
+			
 				 this.statement.executeUpdate(query);
 		} catch (SQLException e) {
 				System.out.println(e);
 		}
-		query  = null;
+		
 		
 	}	
 
 	
 	public void gravarEmpregado(Empregado emp){
 		try {
-			 String query = "insert into empregado (nome,tipo,telefone,matricula,senha) values('"+emp.getNome()+"',"+emp.getTipo()+",'"+emp.getTelefone()+"','"+emp.getMatricula()+"','"+emp.getSenha()+");";
+			 String query = "insert into empregado (nome,matricula,senha) values ('"+emp.getNome()+"','"+emp.getMatricula()+"','"+emp.getSenha()+"');";
 			 this.statement.executeUpdate(query);
 			} catch (SQLException e) {
 				System.out.println(e);
