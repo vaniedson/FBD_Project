@@ -156,6 +156,11 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 				if(Character.isDigit(c)){
 					e.consume();
 				}
+
+				String conteudo = profnome.getText();
+				if (conteudo.length()>=50){
+					e.consume(); 
+				} 
 			}
 
 			public void keyReleased(KeyEvent e) {}
@@ -179,6 +184,20 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 			public void keyPressed(KeyEvent e) {}
 		});
 
+		profdescricao.addKeyListener(new KeyListener() {
+
+			public void keyTyped(KeyEvent e) {
+				String conteudo = profdescricao.getText();
+				if (conteudo.length()>=100){
+					e.consume(); 
+				} 
+			}
+
+			public void keyReleased(KeyEvent e) {}
+
+
+			public void keyPressed(KeyEvent e) {}
+		});
 
 		JLabel label1 = new JLabel( "", SwingConstants.CENTER );
 		JPanel panel1 = new JPanel(); 
@@ -237,6 +256,21 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 			e1.printStackTrace();
 		}
 
+		clifnome.addKeyListener(new KeyListener() {
+
+			public void keyTyped(KeyEvent e) {
+
+				String conteudo = clifnome.getText();
+				if (conteudo.length()>=250){
+					e.consume(); 
+				} 	
+			}
+
+			public void keyReleased(KeyEvent e) {}
+
+			public void keyPressed(KeyEvent e) {}
+		});
+
 		panel2.add(cliltipo);
 		panel2.add(combo);
 		panel2.add(clilnome);
@@ -279,7 +313,43 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 
 		tabbedPane.addTab( "SESSÃO", null, panel3, "Third Panel" );
 
+		sefnome.addKeyListener(new KeyListener() {
 
+
+			public void keyTyped(KeyEvent e) {
+				String conteudo = sefnome.getText();
+				if (conteudo.length()>=25){
+					e.consume(); 
+				} 
+
+				char c = e.getKeyChar();
+				if(Character.isDigit(c)){
+					e.consume();
+				}
+
+
+			}
+
+
+			public void keyReleased(KeyEvent e) {}
+
+			public void keyPressed(KeyEvent e) {}
+		});
+
+		sefdescricao.addKeyListener(new KeyListener() {
+
+
+			public void keyTyped(KeyEvent e) {
+				String conteudo = sefdescricao.getText();
+				if (conteudo.length()>=250){
+					e.consume(); 
+				} 
+			}
+
+			public void keyReleased(KeyEvent e) {}
+
+			public void keyPressed(KeyEvent e) {}
+		});
 
 		//TELA FUNCIONÁRIO
 
@@ -310,6 +380,35 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		JLabel label4 = new JLabel( "", SwingConstants.CENTER );
 		JPanel panel4 = new JPanel(); 
 
+		fufnome.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {
+				String conteudo = sefnome.getText();
+				if (conteudo.length()>=250){
+					e.consume(); 
+				} 
+
+				char c = e.getKeyChar();
+				if(Character.isDigit(c)){
+					e.consume();
+				}
+
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+		});
+
 		fufmatricula.addKeyListener(new KeyListener() {
 
 			@Override
@@ -321,16 +420,41 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 					ew.consume();
 
 				}
+
+				String conteudo = fufmatricula.getText();
+				if (conteudo.length()>=8){
+					ew.consume(); 
+				} 
 			}
 
 			@Override
-			public void keyReleased(KeyEvent ew) {
+			public void keyReleased(KeyEvent ew) {}
+
+			public void keyPressed(KeyEvent ew) {}
+		});
+
+		fulsenha.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {
+				String conteudo = fufsenha.getText();
+				if (conteudo.length()>=8){
+					e.consume(); 
+				} 
+
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
 				// TODO Auto-generated method stub
 
 			}
 
 			@Override
-			public void keyPressed(KeyEvent ew) {}
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+
+			}
 		});
 
 		try {
@@ -382,14 +506,15 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 			int i = Integer.parseInt(profquant_estoque.getText());
 			///float f = Float.parseFloat(profpreco.getText());
 			float f = 12.0f;
-			String string = Float.toString(f);
+
+			//	String string = Float.toString(f);
 			System.out.println("oi");
 			int s = Integer.parseInt(profpesquisa.getText());
 			int g = Integer.parseInt(profcodigo_barras.getText());
 			//Produtos w = new Produtos(nome, codBarras, dataValidade, preco, quantEstoque, descricao, idSeccao)	
 			Produtos p = new Produtos(profnome.getText(), g, profvalidade.getText(), f, i, profdescricao.getText(), 1 );
 			App.banco.gravarProdutos(p);
-			
+
 			profpesquisa.getText();
 			profcodigo_barras.setText("");
 			profnome.setText("");
@@ -448,6 +573,12 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 
 		//AÇÃO SESSÃO
 		if(e.getSource().equals(this.sebcadastrar)) {
+
+			if ((sefnome.getText().length()==0)){
+				JOptionPane.showMessageDialog(null, "O CAMPO NOME É DE PREENCHHIMENTO OBRIGATÓRIO");
+				
+			}
+
 
 			Seccao s = new Seccao(sefnome.getText(), sefdescricao.getText());
 			App.banco.gravarSeccao(s);
