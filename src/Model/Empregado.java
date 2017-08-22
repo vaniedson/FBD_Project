@@ -27,4 +27,12 @@ public class Empregado extends Cliente {
 	}
 	
 	
+	public String[] getLinhaTable(){
+		
+		return new String[]{String.valueOf(this.getNome()), ""+this.getTipo(), ""+this.getTelefone()};
+	}
+	
+	
+
+	
 }

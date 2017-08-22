@@ -12,13 +12,13 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		App.banco.conectar();
-		 if(App.banco.estaConectado()){
-			 System.out.println("sim");
-		 }
-		 else{
-			 System.out.println("nao");
-		 }
+//		App.banco.conectar();
+//		 if(App.banco.estaConectado()){
+//			 System.out.println("sim");
+//		 }
+//		 else{
+//			 System.out.println("nao");
+//		 }
 		 new Tela_Menu();
 		 
 		// App.banco.gravarEmpregado(new Empregado("Zé", 0, "7897987","565", "6767"));

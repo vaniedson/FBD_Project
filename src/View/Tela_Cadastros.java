@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.geom.Arc2D.Float;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
@@ -58,7 +59,8 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 	JLabel selnome, seldescricao;
 	JTextField sefnome, sefdescricao;
 	JButton sebcadastrar, sebsair, seblimpar;
-
+	Seccao seccao;
+	
 	JLabel fulnome, fulsexo, fulmatricula, fullogin, fulsenha, fulresenha, fultelefone;
 	JTextField fufnome, fufmatricula, fuflogin, fuftelefone;
 	JPasswordField fufsenha, fufresenha;
@@ -503,16 +505,18 @@ public class Tela_Cadastros extends JFrame implements ActionListener{
 		// AÇÃO PRODUTO
 		if(e.getSource().equals(this.probcadastrar)) {
 
-			int i = Integer.parseInt(profquant_estoque.getText());
+			int i = Integer.parseInt(profpreco.getText());
 			///float f = Float.parseFloat(profpreco.getText());
-			float f = 12.0f;
+			//float f = 12.0f;
 
 			//	String string = Float.toString(f);
 			System.out.println("oi");
-			int s = Integer.parseInt(profpesquisa.getText());
-			int g = Integer.parseInt(profcodigo_barras.getText());
+		
+			int s = Integer.parseInt(profquant_estoque.getText());
+			//String g = Integer.parseInt(profcodigo_barras.getText());
 			//Produtos w = new Produtos(nome, codBarras, dataValidade, preco, quantEstoque, descricao, idSeccao)	
-			Produtos p = new Produtos(profnome.getText(), g, profvalidade.getText(), f, i, profdescricao.getText(), 1 );
+			Produtos p = new Produtos(profnome.getText(), profcodigo_barras.getText(), profvalidade.getText(), i, s, profdescricao.getText(), 1 );
+		
 			App.banco.gravarProdutos(p);
 
 			profpesquisa.getText();

@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
@@ -122,6 +123,37 @@ public class BancoDados {
 				System.out.println(e);
 			}
 	}
+
+
+	public ArrayList<Produtos> pesquisarProd(String nome){
+		
+		
+		try {
+			ArrayList<Produtos> produtos =  new ArrayList<>();
+			String query = "select * from produto ;";
+			this.resultSet = this.statement.executeQuery(query);
+			while(this.resultSet.next()){	
+				produtos.add(new Produtos(
+						this.resultSet.getInt("id"),
+						this.resultSet.getString("nome"),
+						this.resultSet.getNString("cod_barra"),
+						this.resultSet.getString("validade"), 
+						this.resultSet.getFloat("preço"), 
+						this.resultSet.getInt("quant_estoque"),
+						this.resultSet.getString("descrição"),
+						this.resultSet.getInt("id_seccao")));
+			}
+			
+			return produtos;
+		} catch (SQLException e) {
+			System.err.println("Erro : "+e);
+			
+		}
+		
+		
+		return null;
+	}
+
 }
 
 

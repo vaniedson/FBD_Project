@@ -2,7 +2,7 @@ package Model;
 
 public class Cliente {
 	private int id;
-	private String nome;
+	protected String nome;
 	private int tipo;
 	private String telefone;
 
@@ -44,6 +44,11 @@ public class Cliente {
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
+	}
+	
+	public String[] getLinhaTable(){
+		
+		return new String[]{String.valueOf(this.nome), ""+tipo, this.telefone};
 	}
 	
 

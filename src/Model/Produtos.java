@@ -6,14 +6,14 @@ public class Produtos {
 	
 	private int id ;
 	private String nome;
-	private int codBarras;
+	private String codBarras;
 	private String dataValidade;
 	private float preco;
 	private int quantEstoque;
 	private String descricao;
 	private int idSeccao;
 	
-	public Produtos( String nome, int codBarras,String dataValidade, float preco, int quantEstoque, String descricao, int idSeccao) {
+	public Produtos( String nome, String codBarras,String dataValidade, float preco, int quantEstoque, String descricao, int idSeccao) {
 		this.nome = nome;
 		this.codBarras = codBarras;
 		this.dataValidade= dataValidade;
@@ -22,7 +22,21 @@ public class Produtos {
 		this.descricao=descricao;
 		this.idSeccao=idSeccao;
 	}
-
+	
+	
+	public Produtos(int id, String nome, String codBarras,String dataValidade, float preco, int quantEstoque, String descricao, int idSeccao) {
+		super();
+		this.nome = nome;
+		this.codBarras = codBarras;
+		this.dataValidade= dataValidade;
+		this.preco = preco;
+		this.quantEstoque=quantEstoque;
+		this.descricao=descricao;
+		this.idSeccao=idSeccao;
+	}
+	
+	
+	
 	public String getNome() {
 		return nome;
 	}
@@ -67,7 +81,7 @@ public class Produtos {
 		this.id = id;
 	}
 
-	public void setCodBarras(int codBarras) {
+	public void setCodBarras(String codBarras) {
 		this.codBarras = codBarras;
 	}
 
@@ -79,7 +93,7 @@ public class Produtos {
 		return id;
 	}
 
-	public int getCodBarras() {
+	public String getCodBarras() {
 		return codBarras;
 	}
 
@@ -89,4 +103,7 @@ public class Produtos {
 	
 	
 
+	public String[] getLinhaTable(){
+		return new String[]{String.valueOf(this.id), this.nome, this.descricao};
+	}
 }
